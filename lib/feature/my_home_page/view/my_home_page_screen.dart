@@ -103,34 +103,57 @@ class _MyHomePageState extends State<MyHomePage> {
                 suffixIcon: Icon(Icons.phone),
               ),
             ),
+            Padding(
+              padding: EdgeInsetsGeometry.all(8),
+              child: Row(
+                mainAxisAlignment: .spaceBetween,
+                crossAxisAlignment: .start,
+                children: [
+                  Flexible(child: Text("lollollollollol")),
+                  Expanded(
+                    child: Text(
+                      "datadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadata",
+                      maxLines: 5,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             Spacer(flex: 5),
             Row(
               mainAxisAlignment: .spaceAround,
               children: [
-                ElevatedButton(
-                  onPressed: _incrementCounter,
-                  child: SvgPicture.asset("assets/images/svg/add.svg"),
+                Flexible(
+                  child: ElevatedButton(
+                    onPressed: _incrementCounter,
+                    child: SvgPicture.asset("assets/images/svg/add.svg"),
+                  ),
                 ),
-                InkWell(
-                  onTap: () {
-                    print(phoneController);
-                    print(phoneController.text);
-                  },
-                  child: Container(
-                    height: H * 0.05,
-                    width: W * 0.2,
-                    decoration: BoxDecoration(
-                      color: Colors.purple,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Center(
-                      child: SvgPicture.asset("assets/images/svg/add.svg"),
+                Flexible(
+                  child: InkWell(
+                    onTap: () {
+                      print(phoneController);
+                      print(phoneController.text);
+                    },
+                    child: Container(
+                      height: H * 0.05,
+                      width: W * 0.7,
+                      decoration: BoxDecoration(
+                        color: Colors.purple,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                        child: SvgPicture.asset("assets/images/svg/add.svg"),
+                      ),
                     ),
                   ),
                 ),
-                TextButton(
-                  onPressed: _incrementCounter,
-                  child: Text("increment"),
+                Flexible(
+                  child: TextButton(
+                    onPressed: _incrementCounter,
+                    child: Text("increment"),
+                  ),
                 ),
               ],
             ),
