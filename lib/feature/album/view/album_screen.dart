@@ -14,8 +14,7 @@ class AlbumScreen extends StatelessWidget {
         builder: (context, state) {
           if (state is AlbumLoadingState) {
             return Center(child: CircularProgressIndicator());
-          }
-          else if (state is AlbumErrorState) {
+          } else if (state is AlbumErrorState) {
             return Center(
               child: Column(
                 children: [
@@ -30,23 +29,26 @@ class AlbumScreen extends StatelessWidget {
                 ],
               ),
             );
-          }
-          else if (state is AlbumLoadedState) {
-            return ListView.builder(
-              itemCount: state.albums.length,
-              itemBuilder: (context, index) {
-                final album = state.albums[index];
-                return Card(
-                  child: ListTile(
-                    leading: CircleAvatar(child: Text(album.id.toString())),
-                    title: Text(album.title ?? "-"),
-                  ),
-                );
+          } else if (state is AlbumLoadedState) {
+            return RefreshIndicator(
+              onRefresh: () async {
+                await context.read<AlbumCubit>().getAlbums();
               },
+              child: ListView.builder(
+                itemCount: state.albums.length,
+                itemBuilder: (context, index) {
+                  final album = state.albums[index];
+                  return Card(
+                    child: ListTile(
+                      leading: CircleAvatar(child: Text(album.id.toString())),
+                      title: Text(album.title ?? "-"),
+                    ),
+                  );
+                },
+              ),
             );
-          }
-          else{
-            return Center(child: Text("no state"),);
+          } else {
+            return Center(child: Text("no state"));
           }
         },
       ),
