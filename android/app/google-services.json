@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "34948950243",
+    "project_id": "fundev-x-1162d",
+    "storage_bucket": "fundev-x-1162d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34948950243:android:13e76fd0cc448a9e9f3dd6",
+        "android_client_info": {
+          "package_name": "com.coderz.fun_dev_x"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFYVQpohjnscoWBkJf2pW4Q3N5RhpAnN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
