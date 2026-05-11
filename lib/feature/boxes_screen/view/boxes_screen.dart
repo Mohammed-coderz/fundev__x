@@ -13,6 +13,7 @@ class BoxesScreen extends StatelessWidget {
       HiveBoxes.settingsBox,
       HiveBoxes.cartBox,
       HiveBoxes.cacheBox,
+      HiveBoxes.userBox,
     ];
 
     return Scaffold(

@@ -6,4 +6,5 @@ class HiveBoxes {
   static const String settingsBox = 'settingsBox';
   static const String cartBox = 'cartBox';
   static const String cacheBox = 'cacheBox';
+  static const String userBox = 'userBox';
 }

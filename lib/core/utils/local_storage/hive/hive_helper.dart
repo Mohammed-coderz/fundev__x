@@ -11,6 +11,7 @@ class HiveHelper {
     await Hive.openBox(HiveBoxes.settingsBox);
     await Hive.openBox(HiveBoxes.cartBox);
     await Hive.openBox(HiveBoxes.cacheBox);
+    await Hive.openBox(HiveBoxes.userBox);
   }
 
   static Box _getBox(String boxName) {
@@ -48,27 +49,27 @@ class HiveHelper {
   }) async {
     await _getBox(boxName).clear();
   }
-
+  /// check if the key available or not
   static bool containsKey({
     required String boxName,
     required String key,
   }) {
     return _getBox(boxName).containsKey(key);
   }
-
+  /// get all keys from the box
   static List getKeys({
     required String boxName,
   }) {
     return _getBox(boxName).keys.toList();
   }
-
+  /// get item value by key and box name
   static dynamic getValueByKey({
     required String boxName,
     required dynamic key,
   }) {
     return _getBox(boxName).get(key);
   }
-
+  /// listener
   static ValueListenable<Box> listenToBox({
     required String boxName,
   }) {
